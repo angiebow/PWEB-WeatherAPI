@@ -4,18 +4,24 @@
     <title>Weather Information</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121212; 
-            color: #fff; 
+            font-family: 'Raleway', Arial, sans-serif;
+            background-image: url('https://cdn.pixabay.com/photo/2020/04/13/17/23/rainbow-5039388_1280.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
             margin: 0;
             padding: 0;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
         header {
-            background-color: #1E1E1E;
+            background-color: #f1c40f;
             color: #fff;
             text-align: center;
             padding: 20px;
+            font-family: 'Raleway', Arial, sans-serif; 
         }
 
         h1 {
@@ -27,7 +33,7 @@
             max-width: 600px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #333; 
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
         }
@@ -46,25 +52,26 @@
         input[type="text"] {
             width: 70%;
             padding: 10px;
-            background-color: #1E1E1E; 
-            border: 1px solid #333;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            color: #fff;
+            color: #333;
+            font-family: 'Raleway', Arial, sans-serif; 
         }
 
         #search-button {
-            background-color: white;
-            color: black;
+            background-color: #f1c40f;
+            color: #fff;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
             cursor: pointer;
             margin: 10px;
+            font-family: 'Raleway', Arial, sans-serif; 
         }
 
         #search-button:hover {
-            background-color: grey;
-            color: white;
+            background-color: #d4ac0d;
         }
 
         #weather-info {
@@ -74,10 +81,14 @@
         h2 {
             font-size: 28px;
             margin-bottom: 10px;
+            color: black;
+            font-family: 'Raleway', Arial, sans-serif; 
         }
 
         p {
             font-size: 20px;
+            color: black;
+            font-family: 'Raleway', Arial, sans-serif;
         }
     </style>
 </head>
@@ -88,7 +99,7 @@
     <main>
         <section id="search">
             <label for="city-input">Enter city name:</label>
-            <input type="text" id="city-input" placeholder="E.g., New York">
+            <input type="text" id="city-input" placeholder="New York">
             <button id="search-button">Search</button>
         </section>
         <section id="weather-info">
@@ -96,7 +107,7 @@
     </main>
 
     <script>
-        const apiKey = 'b2910fccedc7fcf2c4c65797fc4cfce2'; 
+        const apiKey = 'b2910fccedc7fcf2c4c65797fc4cfce2';
         const searchButton = document.getElementById('search-button');
         const cityInput = document.getElementById('city-input');
         const weatherInfo = document.getElementById('weather-info');
@@ -105,8 +116,7 @@
             const city = cityInput.value;
             if (city) {
                 getWeatherData(city);
-            } 
-            else {
+            } else {
                 alert('Please enter a city name.');
             }
         });
